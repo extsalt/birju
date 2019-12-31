@@ -25,7 +25,6 @@ class PhotoOptimiseController extends Controller
         });
         $resizedImage->save(public_path("images/$name"));
 
-
         $photo = \App\Photo::create([
             'url' => "/images/$name",
         ]);
