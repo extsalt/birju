@@ -57,3 +57,7 @@ Route::post('/birju/process', function () {
 });
 
 Route::post('/birju/optimise', 'PhotoOptimiseController@optimise');
+
+Route::get('/birju/gallery', function () {
+    return view('birju.gallery');
+});
