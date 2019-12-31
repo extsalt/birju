@@ -25,6 +25,7 @@ class PhotoOptimiseController extends Controller
         });
         $resizedImage->save(public_path("images/$name"));
 
+
         $photo = \App\Photo::create([
             'url' => "/images/$name",
         ]);
@@ -39,7 +40,7 @@ class PhotoOptimiseController extends Controller
                 '--force',
             ]));
 
-        $optimizerChain->optimize(public_path("/images/$name"), public_path("/images/optimise/$name"));
+        $optimizerChain->optimize(public_path("/images/$name"));
 
         return response()->json(['clientId' => $request->get('clientId')], 201);
     }
